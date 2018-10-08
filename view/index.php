@@ -13,16 +13,43 @@
 	<script src="../public/js/jsAcciones.js"></script>
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+
+	<style type="">
+		#image {
+			  background-color: rgba(0,0,0,0.8);
+			  background-image:url(../public/img/fondo.jpg);
+			  height: 500px;
+			  max-width: 100%;
+			  filter:brightness(0.4);
+		}
+	</style>
+
 </head>
 <body>
 	<?php
 		$paciente = $_GET['idpaciente'];
 		$profesional = $_GET['profesional'];
+		$nombre = $_GET['nombre'];
+		$apellido = $_GET['apellido'];
+		$nacimiento = $_GET['nacimiento'];
+		$telefono = $_GET['telefono'];
+		$obra = $_GET['obrasocial'];
+		$sangre = $_GET['sangre'];
+		$documento = $_GET['documento'];
 	?>
 	<header>
-		<h1 style="text-align: center;text-decoration: underline;">ODONTOGRAMA DE PACIENTE</h1>
+		<img style="width:128px;height:128px;margin:10px auto;
+	display:block;" src="../public/img/pp.jpg" />
+		<h1 style="text-align: center;text-decoration: underline;font-family:verdana;">ODONTOGRAMA DE PACIENTE</h1>
 		<input type="hidden" id="txtCodigoPaciente" name="txtCodigoPaciente" value="<?php echo($paciente)  ?>">
 		<input type="hidden" id="txtCodigoProfesional" name="txtCodigoProfesional" value="<?php echo($profesional)  ?>">
+		
+          
+      	
+		<h2 style="font-family:verdana;">Paciente: <?php echo ($nombre); echo ( $apellido) ?> </h2>
+		<h2 style="font-family:verdana;">Documento: <?php echo " $documento " ; ?></h2>
+		<h2 style="font-family:verdana;">Sangre: <?php echo " $sangre " ; ?></h2>
+		<h2 style="font-family:verdana;">Telefono: <?php echo " $telefono " ; ?></h2>
 	</header>
 	<br>
 
@@ -106,11 +133,6 @@
 			<hr>
 			<div>
 				<section id="seccionPaginaAjax"></section>
-
-				
-
-
-
 				<?php 
 				if ($paciente != $profesional){?>
 				<input type="button" class="button anchoCompleto" style="background: green;" value="Guardar Tratamientos" onclick="guardarTratamiento();">
