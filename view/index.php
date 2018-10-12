@@ -23,7 +23,6 @@
 			  filter:brightness(0.4);
 		}
 	</style>
-
 </head>
 <body>
 	<?php
@@ -45,11 +44,13 @@
 		<input type="hidden" id="txtCodigoProfesional" name="txtCodigoProfesional" value="<?php echo($profesional)  ?>">
 		
           
-      	
-		<h2 style="font-family:verdana;">Paciente: <?php echo ($nombre); echo ( $apellido) ?> </h2>
-		<h2 style="font-family:verdana;">Documento: <?php echo " $documento " ; ?></h2>
-		<h2 style="font-family:verdana;">Sangre: <?php echo " $sangre " ; ?></h2>
-		<h2 style="font-family:verdana;">Telefono: <?php echo " $telefono " ; ?></h2>
+	    <div> 	
+			<h3 style="font-family:verdana;">Paciente: <?php echo ($nombre); echo ( $apellido) ?> </h3>
+			<h3 style="font-family:verdana;">Documento: <?php echo " $documento " ; ?></h3>
+			<h3 style="font-family:verdana;">Sangre: <?php echo " $sangre " ; ?></h3>
+			<h3 style="font-family:verdana;">Telefono: <?php echo " $telefono " ; ?></h3>
+			<h3 style="font-family:verdana;">Obra Social: <?php echo " $obra " ; ?></h3>
+		</div>
 	</header>
 	<br>
 
@@ -106,6 +107,7 @@
 							<option value="36-IMPLANTE">IMPLANTE</option>
 							<option value="37-SUPERNUMERARIO">SUPERNUMERARIO</option>
 							<option value="38-DIENTE POR EXTRAER">DIENTE POR EXTRAER</option>
+							<option value="39-CONSULTA">CONSULTA</option>
 						</select>
 						<hr>
 
@@ -127,7 +129,7 @@
 				<div class="displayInlineBlockTop">
 					<label style="margin-top: 20px;"><b >NUMERO DE ORDEN</b> </label>
 					<br>
-					<input style="width: 100%; padding: 12px 20px; margin: 8px 0; display: inline-block; border: 1px solid #ccc; border-radius: 4px;box-sizing: border-box;"  name="txtDescripcion" id="txtDescripcion"></input>
+					<input style="width: 100%; padding: 12px 20px; margin: 8px 0; display: inline-block; border: 1px solid #ccc; border-radius: 4px;box-sizing: border-box;"  name="txtDescripcion" id="txtDescripcion" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');" type="number"></input>
 				</div>
 			</section>
 			<hr>
